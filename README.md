@@ -21,3 +21,11 @@ Athena
 - RVM
 - Cocoapods (Install via Homebrew)
 - Carthage (Install via Homebrew)
+
+## Getting Started
+
+```bash
+$ git clone https://github.com/h1994st/Athena.git
+$ cd Athena
+$ ./Athena.sh
+```
