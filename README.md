@@ -1,6 +1,10 @@
 Athena
 ===
 
+Athena is a set of scripts to automatically install and configure necessary tools.
+
+## Tools
+
 - [Oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), [config file](https://github.com/h1994st/Athena/blob/master/zshrc)
 - [Homebrew](https://github.com/Homebrew/brew) (macOS only)
 
