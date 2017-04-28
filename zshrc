@@ -53,30 +53,32 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 export SSLKEYLOGFILE=~/sslkeylogs/output.log
 
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
-
 # Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH # Android tools, e.g., adb
 export PATH=$ANDROID_HOME/build-tools/25.0.2:$PATH
 
 # PHP
-export PATH=$PATH:~/.composer/vendor/bin
+export PATH=~/.composer/vendor/bin:$PATH
 
 # Go
 export GOPATH=$HOME/GoWorkspace
-PATH=/usr/local/opt/go/libexec/bin:$GOPATH/bin:$PATH # GO
+export PATH=/usr/local/opt/go/libexec/bin:$GOPATH/bin:$PATH # GO
 
 # Rust
 [[ -s "$HOME/.cargo/env" ]] && source $HOME/.cargo/env
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # NVM
 [ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh" # This loads nvm
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Chinese Supprt
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+
+# Editor
+export EDITOR='vim'
