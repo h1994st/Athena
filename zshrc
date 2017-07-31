@@ -12,7 +12,7 @@ ZSH_THEME="dallas"
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias applyzshconfig="source ~/.zshrc"
-alias gotoprojects="cd ~/Documents/Private/Project"
+alias gotoprojects="cd ~/Developer/Project"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
