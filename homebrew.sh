@@ -10,10 +10,10 @@ fi
 
 # Check whether Homebrew is installed
 if command -v brew > /dev/null 2>&1 ; then
-    echo 'Update Homebrew...'
+    echo 'Update Homebrew ...'
     brew update
 else
-    echo 'Install Homebrew...'
+    echo 'Install Homebrew ...'
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
@@ -22,9 +22,11 @@ formulas=(git git-flow wget ctags go pandoc cloc class-dump carthage)
 echo 'Formulas: '${formulas[@]}
 for formula in ${formulas[@]}
 do
-    if brew ls --versions myformula > /dev/null 2>&1 ; then
+    if brew ls --versions $formula > /dev/null 2>&1 ; then
+        echo "Upgrade ${formula} ..."
         brew upgrade $formula
     else
+        echo "Install ${formula} ..."
         brew install $formula
     fi
 done

@@ -7,7 +7,7 @@
 if [ "$SYSTEM"x = "Linux"x ] ; then
     # Check vim
     if ! command -v vim > /dev/null 2>&1 ; then
-        echo 'Install vim...'
+        echo 'Install vim ...'
         sudo apt-get install vim
     fi
 fi

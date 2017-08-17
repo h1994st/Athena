@@ -6,7 +6,7 @@ if [ "$SYSTEM"x = "Linux"x ] ; then
     # Check zsh
     CHECK_ZSH_INSTALLED=$(grep /zsh$ /etc/shells | wc -l)
     if [ ! $CHECK_ZSH_INSTALLED -ge 1 ]; then
-        echo 'Install zsh...'
+        echo 'Install zsh ...'
         sudo apt-get install zsh
     fi
     unset CHECK_ZSH_INSTALLED
@@ -18,10 +18,10 @@ fi
 
 # Check oh-my-zsh
 if [ -d "$ZSH" ]; then
-    echo 'Update Oh My Zsh...'
+    echo 'Update Oh My Zsh ...'
     env ZSH=$ZSH sh $ZSH/tools/upgrade.sh
 else
-    echo 'Install Oh My Zsh...'
+    echo 'Install Oh My Zsh ...'
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
@@ -38,7 +38,7 @@ if [ -f ~/.zshrc ] ; then
 fi
 
 if [ "$(readlink ~/.zshrc)"x != "$(pwd)/zshrc"x ] || ! [ -f ~/.zshrc ] ; then
-    echo 'Create a symbolic link...'
+    echo 'Create a symbolic link ...'
     ln -s $(pwd)/zshrc ~/.zshrc
     ls -al ~/.zshrc
 fi
