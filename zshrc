@@ -53,6 +53,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 export SSLKEYLOGFILE=~/sslkeylogs/output.log
 
+# Python
+# export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
 # Android
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$ANDROID_HOME/platform-tools:$PATH # Android tools, e.g., adb
