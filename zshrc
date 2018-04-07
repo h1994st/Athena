@@ -72,7 +72,8 @@ export PATH=/usr/local/opt/go/libexec/bin:$GOPATH/bin:$PATH # GO
 [[ -s "$HOME/.cargo/env" ]] && source $HOME/.cargo/env
 
 # NVM
-[ -s "$HOME/.nvm/nvm.sh" ] && . "$HOME/.nvm/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # RVM
