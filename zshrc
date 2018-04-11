@@ -13,6 +13,7 @@ alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias applyzshconfig="source ~/.zshrc"
 alias gotoprojects="cd ~/Developer/Project"
+alias vimconfig="vim ~/.vimrc"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
