@@ -50,7 +50,7 @@ if [ "$VERSION"x = ""x ] ; then
     exit 2
 fi
 
-BASE_URL=${BASE_URL}/$VERSION
+BASE_URL="${BASE_URL}/$VERSION"
 LLVM_SRC_DIR="llvm-${VERSION}.src"
 CLANG_SRC_DIR="clang-${VERSION}.src"
 COMPILER_RT_SRC_DIR="compiler-rt-${VERSION}.src"
@@ -120,6 +120,7 @@ function main() {
     # Clean up workspace
     info "Clean up the workspace ..."
     make clean
+    info "Done!"
 }
 
 main
