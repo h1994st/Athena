@@ -69,8 +69,12 @@ fi
 LLVM_BUILD_DIR="${LLVM_BUILD_DIR}-${DEBUG_TYPE}"
 
 function download() {
-    info "Download $1"
-    wget "${BASE_URL}/$1"
+    if [ ! -d $1 ] ; then
+        info "Download $1"
+        wget "${BASE_URL}/$1"
+    else
+        info "$1 already exists"
+    fi
 }
 
 function unzip() {
@@ -121,7 +125,8 @@ function main() {
 
     # Clean up workspace
     info "Clean up the workspace ..."
-    make clean
+    cd ..
+    rm -rf $LLVM_SRC_DIR $LLVM_BUILD_DIR
     info "Done!"
 }
 
