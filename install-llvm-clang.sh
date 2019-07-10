@@ -8,6 +8,8 @@ BASE_URL="http://releases.llvm.org"
 
 source log.sh
 
+START_TIME=$(get_now)
+
 function usage() {
     cat <<EOF
 Usage: $(basename $0) [options]

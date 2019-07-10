@@ -8,6 +8,8 @@ BASE_URL="https://github.com/Kitware/CMake/releases/download"
 
 source log.sh
 
+START_TIME=$(get_now)
+
 function usage() {
     cat <<EOF
 Usage: $(basename $0) [options]
