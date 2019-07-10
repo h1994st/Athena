@@ -54,7 +54,7 @@ fi
 
 BASE_URL="${BASE_URL}/$VERSION"
 LLVM_SRC_DIR="llvm-${VERSION}.src"
-CLANG_SRC_DIR="clang-${VERSION}.src"
+CLANG_SRC_DIR="cfe-${VERSION}.src"
 COMPILER_RT_SRC_DIR="compiler-rt-${VERSION}.src"
 LLVM_SRC_TAR="${LLVM_SRC_DIR}.tar.xz"
 CLANG_SRC_TAR="${CLANG_SRC_DIR}.tar.xz"
