@@ -118,8 +118,17 @@ function main() {
 
     # CMake
     info "Start building ..."
-    cmake -DCMAKE_BUILD_TYPE=${DEBUG_TYPE} "../${LLVM_SRC_DIR}"
-    make -j6
+    CMAKE_OPTIONS="-DCMAKE_BUILD_TYPE=${DEBUG_TYPE} -DLLVM_USE_LINKER=gold -DLLVM_PARALLEL_LINK_JOBS=1"
+    GCC_MIN_VERSION="5.1.0"
+    GCC_VERSION=$(gcc --version)
+    if [ "$(printf '%s\n' "$GCC_MIN_VERSION" "$GCC_VERSION" | sort -V | head -n1)"x = "$GCC_MIN_VERSION"x ] ; then
+        info "GCC Version: ${GCC_VERSION}"
+    else
+        warning "GCC is too old: ${GCC_VERSION}"
+        CMAKE_OPTIONS="${CMAKE_OPTIONS} -DLLVM_TEMPORARILY_ALLOW_OLD_TOOLCHAIN=ON"
+    fi
+    cmake ${CMAKE_OPTIONS} "../${LLVM_SRC_DIR}"
+    make -j`nproc`
     sudo make install
     success "Finish building & installing!"
 
