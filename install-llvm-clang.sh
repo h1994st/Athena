@@ -69,7 +69,7 @@ fi
 LLVM_BUILD_DIR="${LLVM_BUILD_DIR}-${DEBUG_TYPE}"
 
 function download() {
-    if [ ! -d $1 ] ; then
+    if [ ! -f $1 ] ; then
         info "Download $1"
         wget "${BASE_URL}/$1"
     else
