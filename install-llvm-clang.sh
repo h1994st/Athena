@@ -5,6 +5,7 @@ set -e
 VERSION=""
 DEBUG="no"
 BASE_URL="http://releases.llvm.org"
+JOBS="$(nproc)"
 
 source log.sh
 
@@ -16,6 +17,7 @@ Usage: $(basename $0) [options]
 OPTIONS:
     -V, --version <version>     Specify which version of LLVM to install.
     -d, --debug                 Install debug version.
+    -n, --num <number of jobs>  Number of simutaneous jobs (Makefile).
     -h, --help                  Display this help information.
 
 Examples:
@@ -36,6 +38,9 @@ do
             ;;
         -h|--help)
             usage
+            ;;
+        -n|--num)
+            JOBS=$1
             ;;
         *)
             error "Unknown option: $1"
@@ -128,7 +133,11 @@ function main() {
         CMAKE_OPTIONS="${CMAKE_OPTIONS} -DLLVM_TEMPORARILY_ALLOW_OLD_TOOLCHAIN=ON"
     fi
     cmake ${CMAKE_OPTIONS} "../${LLVM_SRC_DIR}"
-    make -j`nproc`
+    if [ $((JOBS)) -gt 1 ] ; then
+        make -j${JOBS}
+    else
+        make
+    fi
     sudo make install
     success "Finish building & installing!"
 
