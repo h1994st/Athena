@@ -46,7 +46,6 @@ if [ "$VERSION"x = ""x ] ; then
     exit 2
 fi
 
-https://github.com/Kitware/CMake/releases/download/v3.14.5/cmake-3.14.5.tar.gz
 BASE_URL="${BASE_URL}/v${VERSION}"
 SRC_DIR="cmake-${VERSION}"
 SRC_TAR="${SRC_DIR}.tar.gz"
