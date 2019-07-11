@@ -5,7 +5,7 @@ set -e
 VERSION=""
 DEBUG="no"
 BASE_URL="http://releases.llvm.org"
-JOBS="$(nproc)"
+JOBS="0"
 
 source log.sh
 
