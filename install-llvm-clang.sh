@@ -61,9 +61,11 @@ BASE_URL="${BASE_URL}/$VERSION"
 LLVM_SRC_DIR="llvm-${VERSION}.src"
 CLANG_SRC_DIR="cfe-${VERSION}.src"
 COMPILER_RT_SRC_DIR="compiler-rt-${VERSION}.src"
+OPENMP_SRC_DIR="openmp-${VERSION}.src"
 LLVM_SRC_TAR="${LLVM_SRC_DIR}.tar.xz"
 CLANG_SRC_TAR="${CLANG_SRC_DIR}.tar.xz"
 COMPILER_RT_SRC_TAR="${COMPILER_RT_SRC_DIR}.tar.xz"
+OPENMP_SRC_TAR="${OPENMP}.tar.xz"
 LLVM_BUILD_DIR="llvm-${VERSION}-build"
 
 DEBUG_TYPE="RelWithDebInfo"
@@ -104,17 +106,20 @@ function main() {
     download $LLVM_SRC_TAR  # LLVM
     download $CLANG_SRC_TAR  # Clang
     download $COMPILER_RT_SRC_TAR  # compiler-rt
+    download $OPENMP_SRC_TAR  # openmp
 
     # Unzip source codes
     info "Start unzipping files ..."
     unzip $LLVM_SRC_TAR
     unzip $CLANG_SRC_TAR
     unzip $COMPILER_RT_SRC_TAR
+    unzip $OPENMP_SRC_TAR
 
     # Move subprojects to LLVM main directory
     info "Start integrating source codes ..."
     move_to ${CLANG_SRC_DIR} "${LLVM_SRC_DIR}/tools/clang"
     move_to ${COMPILER_RT_SRC_DIR} "${LLVM_SRC_DIR}/projects/compiler-rt"
+    move_to ${OPENMP_SRC_DIR} ${LLVM_SRC_DIR}
 
     # Create build directory
     info "Create and switch to workspace \"${LLVM_BUILD_DIR}\""
@@ -145,6 +150,7 @@ function main() {
     info "Clean up the workspace ..."
     cd ..
     rm -rf $LLVM_SRC_DIR $LLVM_BUILD_DIR
+    rm -rf *.tar.xz
     info "Done!"
 }
 
