@@ -127,7 +127,7 @@ function main() {
     info "Start integrating source codes ..."
     move_to ${CLANG_SRC_DIR} "${LLVM_SRC_DIR}/tools/clang"
     move_to ${COMPILER_RT_SRC_DIR} "${LLVM_SRC_DIR}/projects/compiler-rt"
-    move_to ${OPENMP_SRC_DIR} "${LLVM_SRC_DIR}/openmp"
+    move_to ${OPENMP_SRC_DIR} "${LLVM_SRC_DIR}/projects/openmp"
     move_to ${LIBCXX_SRC_DIR} "${LLVM_SRC_DIR}/projects/libcxx"
     move_to ${LIBCXX_ABI_SRC_DIR} "${LLVM_SRC_DIR}/projects/libcxxabi"
 
