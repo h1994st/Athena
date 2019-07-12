@@ -62,10 +62,14 @@ LLVM_SRC_DIR="llvm-${VERSION}.src"
 CLANG_SRC_DIR="cfe-${VERSION}.src"
 COMPILER_RT_SRC_DIR="compiler-rt-${VERSION}.src"
 OPENMP_SRC_DIR="openmp-${VERSION}.src"
+LIBCXX_SRC_DIR="libcxx-${VERSION}.src"
+LIBCXX_ABI_SRC_DIR="libcxxabi-${VERSION}.src"
 LLVM_SRC_TAR="${LLVM_SRC_DIR}.tar.xz"
 CLANG_SRC_TAR="${CLANG_SRC_DIR}.tar.xz"
 COMPILER_RT_SRC_TAR="${COMPILER_RT_SRC_DIR}.tar.xz"
 OPENMP_SRC_TAR="${OPENMP}.tar.xz"
+LIBCXX_SRC_TAR="${LIBCXX_SRC_DIR}.tar.xz"
+LIBCXX_ABI_SRC_TAR="${LIBCXX_ABI_SRC_DIR}.tar.xz"
 LLVM_BUILD_DIR="llvm-${VERSION}-build"
 
 DEBUG_TYPE="RelWithDebInfo"
@@ -107,6 +111,8 @@ function main() {
     download $CLANG_SRC_TAR  # Clang
     download $COMPILER_RT_SRC_TAR  # compiler-rt
     download $OPENMP_SRC_TAR  # openmp
+    download $LIBCXX_SRC_TAR  # libc++
+    download $LIBCXX_ABI_SRC_TAR  # libc++ abi
 
     # Unzip source codes
     info "Start unzipping files ..."
@@ -114,12 +120,16 @@ function main() {
     unzip $CLANG_SRC_TAR
     unzip $COMPILER_RT_SRC_TAR
     unzip $OPENMP_SRC_TAR
+    unzip $LIBCXX_SRC_TAR
+    unzip $LIBCXX_ABI_SRC_TAR
 
     # Move subprojects to LLVM main directory
     info "Start integrating source codes ..."
     move_to ${CLANG_SRC_DIR} "${LLVM_SRC_DIR}/tools/clang"
     move_to ${COMPILER_RT_SRC_DIR} "${LLVM_SRC_DIR}/projects/compiler-rt"
-    move_to ${OPENMP_SRC_DIR} ${LLVM_SRC_DIR}
+    move_to ${OPENMP_SRC_DIR} "${LLVM_SRC_DIR}/openmp"
+    move_to ${LIBCXX_SRC_DIR} "${LLVM_SRC_DIR}/projects/libcxx"
+    move_to ${LIBCXX_ABI_SRC_DIR} "${LLVM_SRC_DIR}/projects/libcxxabi"
 
     # Create build directory
     info "Create and switch to workspace \"${LLVM_BUILD_DIR}\""
