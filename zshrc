@@ -43,7 +43,7 @@ alias gotoprojects="cd ~/Developer/Project"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sublime svn svn-fast-info)
+plugins=(git sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,10 +76,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # Chinese Supprt
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -87,4 +83,14 @@ export LANG=en_US.UTF-8
 
 # Editor
 export EDITOR='vim'
+
+# javacc
+export PATH=/Users/tomhu/Developer/Project/javacc-6.0/bin:$PATH
+
+# NuSMV/nuXmv
+export PATH=/Users/tomhu/Developer/Research/TrustZone+Vehicle/ModelChecking/NuSMV/NuSMV-2.6.0-Darwin/bin:$PATH
+export PATH=/Users/tomhu/Developer/Research/TrustZone+Vehicle/ModelChecking/nuXmv/nuXmv-1.1.1-Darwin/bin:$PATH
+
+# opam configuration
+test -r /Users/tomhu/.opam/opam-init/init.zsh && . /Users/tomhu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
