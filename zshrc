@@ -13,6 +13,7 @@ alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias applyzshconfig="source ~/.zshrc"
 alias gotoprojects="cd ~/Developer/Project"
+alias vimconfig="vim ~/.vimrc"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -84,13 +85,6 @@ export LANG=en_US.UTF-8
 # Editor
 export EDITOR='vim'
 
-# javacc
-export PATH=/Users/tomhu/Developer/Project/javacc-6.0/bin:$PATH
-
-# NuSMV/nuXmv
-export PATH=/Users/tomhu/Developer/Research/TrustZone+Vehicle/ModelChecking/NuSMV/NuSMV-2.6.0-Darwin/bin:$PATH
-export PATH=/Users/tomhu/Developer/Research/TrustZone+Vehicle/ModelChecking/nuXmv/nuXmv-1.1.1-Darwin/bin:$PATH
-
 # opam configuration
-test -r /Users/tomhu/.opam/opam-init/init.zsh && . /Users/tomhu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
