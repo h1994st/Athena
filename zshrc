@@ -44,7 +44,7 @@ alias vimconfig="vim ~/.vimrc"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git sublime svn svn-fast-info)
+plugins=(git sublime vscode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,3 +91,23 @@ export EDITOR='vim'
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# OMNET++
+export PATH=/home/h1994st/Developer/Research/CV_Platoon/omnetpp-5.4.1/bin:$PATH
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/h1994st/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/h1994st/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/h1994st/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/h1994st/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

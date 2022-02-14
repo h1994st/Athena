@@ -80,7 +80,7 @@ function main() {
     # Build
     info "Start building ..."
     cd $SRC_DIR
-    ./bootstrap && make -j6 && sudo make install
+    ./bootstrap --system-curl && make -j6 && sudo make install
     success "Finish building & installing!"
 
     # Clean up workspace
