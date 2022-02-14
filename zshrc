@@ -77,10 +77,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 # Chinese Supprt
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -91,23 +87,4 @@ export EDITOR='vim'
 
 # opam configuration
 test -r $HOME/.opam/opam-init/init.zsh && . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# OMNET++
-export PATH=/home/h1994st/Developer/Research/CV_Platoon/omnetpp-5.4.1/bin:$PATH
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/h1994st/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/h1994st/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/h1994st/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/h1994st/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
